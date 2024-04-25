@@ -1,7 +1,7 @@
 /* Compilación: g++ -g -o img test.cpp
  * Ejecución: ./img
  *
- * Luego de la ejecución se generarán 3 imagines: imagen.png,
+ * Luego de la ejecución se generarán 3 imagenes: imagen.png,
  * imagen_desplazada_500.png e imagen_desplazada_600.png
  */
 
@@ -10,16 +10,16 @@
 
 int main() {
   moving_image im;
+  im.rotate();
+  im.rotate(); 
+  im.rotate();
+  im.repeat();
+  im.move_right(500);
+  im.undo();
+  im.redo();
+  im.draw("salida.png");
 
-  im.draw("imagen.png");
-  sleep(2);
-  im.move_down(200);
-  sleep(2);
-  im.draw("imagen_desplazadadown.png");
-  //im.rotate();
-  //sleep(2);
-  //im.draw("imagen_rotada.png");
-
+  
   /* NOTA 1: Si usan el mismo nombre para las imágenes, entonces cada llamada al
   método draw() sobreescribirá a la imagen */
 
